@@ -1,4 +1,4 @@
-def watch_pyramid_from_the_side(characters):
+def watch_pyramid_from_the_side(characters=None):
     if characters == '':
         return('')
     if not characters:
@@ -26,7 +26,7 @@ def watch_pyramid_from_the_side(characters):
     return(output)
 
 
-def watch_pyramid_from_above(characters):
+def watch_pyramid_from_above(characters=None):
     if characters == '':
         return('')
     if not characters:
@@ -34,8 +34,7 @@ def watch_pyramid_from_above(characters):
     point = len(characters)
     output = ''
     count = -1
-    total_lane = point *2 -1
-    temp_temp = -1
+    total_lane = point * 2 - 1
     hold = []
     off_set = -1
     view = ''
@@ -46,23 +45,20 @@ def watch_pyramid_from_above(characters):
         at = 0
         view = ''
         po = x
-        temp = temp_temp
-        if po >= point :
-            po = x -1
+        if po >= point:
+            po = x - 1
             po = point - po
         if flag == 0:
             for y in range(count):
                 view += characters[at]
-                if y + po + 1 >=count and at != 0:
+                if y + po + 1 >= count and at != 0:
                     at -= 1
-                elif at < po and at < point -1 and flag == 0:
-                    at +=1
+                elif at < po and at < point - 1 and flag == 0:
+                    at += 1
                 if characters[at] is characters[-1]:
                     flag = 1
             if flag == 0:
                 hold.append(view)
-            
-        
         elif flag == 1:
             view = hold[off_set]
             off_set -= 1
@@ -71,7 +67,7 @@ def watch_pyramid_from_above(characters):
     return(output)
 
 
-def count_visible_characters_of_the_pyramid(characters):
+def count_visible_characters_of_the_pyramid(characters=None):
     if not characters:
         return(-1)
     total = 0
@@ -80,7 +76,7 @@ def count_visible_characters_of_the_pyramid(characters):
         count += 2
         temp_count = count
         if temp_count > 1:
-            temp_count = ((temp_count -2) * 4) + 4
+            temp_count = ((temp_count - 2) * 4) + 4
         total += temp_count
     return(total)
 
