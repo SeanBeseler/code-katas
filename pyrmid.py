@@ -1,4 +1,5 @@
 def watch_pyramid_from_the_side(characters=None):
+    """returns side view of pyramid"""
     if characters == '':
         return('')
     if not characters:
@@ -27,6 +28,7 @@ def watch_pyramid_from_the_side(characters=None):
 
 
 def watch_pyramid_from_above(characters=None):
+    """returns top view of pyramid"""
     if characters == '':
         return('')
     if not characters:
@@ -68,6 +70,7 @@ def watch_pyramid_from_above(characters=None):
 
 
 def count_visible_characters_of_the_pyramid(characters=None):
+    """returns visible stone count pyramid"""
     if not characters:
         return(-1)
     total = 0
@@ -82,6 +85,7 @@ def count_visible_characters_of_the_pyramid(characters=None):
 
 
 def count_all_characters_of_the_pyramid(characters):
+    """returns all stone count pyramid"""
     if not characters:
         return(-1)
     total = 0
